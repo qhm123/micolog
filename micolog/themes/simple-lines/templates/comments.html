@@ -8,7 +8,7 @@
 		<div id="div-comment-{{comment.key.id}}" class="c">
 		<div class="commentmeta" title="回复{{comment.author}}" onclick="return backcomment('{{comment.author}}',{{comment.key.id}});" style="cursor: pointer;"><img height="35" width="35" src="{{comment.gravatar_url}}" alt=""/></div>
 		<div class="comments">
-			<div class="commentmetadata"> &nbsp;-&nbsp;{{comment.date.date|datetz:"Y-m-d"}} at {{comment.date|datetz:"H:i"}}</div>
+			<div class="commentmetadata">{{comment.no}}&nbsp;-&nbsp;{{comment.date.date|datetz:"Y-m-d"}} at {{comment.date|datetz:"H:i"}}</div>
 			<div class="fn">{%if comment.weburl %}<a href="{{comment.weburl}}" target="_blank">{{comment.author}}</a>{% else %}{{comment.author}}{%endif%}</div>
 			<div class="commentcontent">{{comment.content}}</div>
 		</div>

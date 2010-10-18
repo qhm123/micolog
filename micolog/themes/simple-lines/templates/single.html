@@ -3,6 +3,8 @@
 {% block head_block %}
 {% if entry %}
 {%if entry.strtags%}<meta name="Keywords" content="{{entry.strtags}}" />{%endif%}
+{%if entry.excerpt%}<meta name="Description" content="{{entry.excerpt|escape}}" />{%endif%}
+<link rel="canonical" href="{{blog.baseurl}}/{{ entry.link }}" />
 {% endif %}
 <script type="text/javascript" src="/themes/{{ blog.theme_name }}/comment.js"></script>
 <script type="text/javascript" src="/static/js/jquery.form.utf8.js"></script>
