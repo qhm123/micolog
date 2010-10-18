@@ -60,7 +60,7 @@ class BasePublicPage(BaseRequestHandler):
 						'blogroll':blogroll,
 						'archives':archives,
 						'alltags':alltags,
-						'recent_comments':Comment.all().order('-date').fetch(5)
+						'recent_comments':Comment.all().order('-date').fetch(10)
 		})
 
 	def m_list_pages(self):
@@ -131,6 +131,7 @@ class MainPage(BasePublicPage):
 
 
 		return self.render('index',{'entries':entries,
+								'stickys':self.sticky_entrys(),
 						   'show_prev' : show_prev,
 						'show_next' : show_next,
 						'pageindex':page,

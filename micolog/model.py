@@ -243,7 +243,12 @@ class Blog(db.Model):
 
 	@vcache("blog.hotposts")
 	def hotposts(self):
-		return Entry.all().filter('entrytype =','post').filter("published =", True).order('-readtimes').fetch(8)
+		return Entry.all().filter('entrytype =','post').filter("published =", True).order('-readtimes').fetch(10)
+
+	# qhm添加
+	@vcache("blog.coldposts")
+	def coldposts(self):
+		return Entry.all().filter('entrytype =','post').filter("published =", True).order('readtimes').fetch(10)
 
 	@vcache("blog.recentposts")
 	def recentposts(self):

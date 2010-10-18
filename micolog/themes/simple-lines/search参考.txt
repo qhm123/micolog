@@ -1,0 +1,26 @@
+﻿<div id="cse">正在搜索...</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'zh-CN', style : google.loader.themes.MINIMALIST});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('014901026069788417494:fkjdsrbk6ne');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+customSearchControl.setNoResultsString('什么也没找到，请重试');
+customSearchControl.setSearchCompleteCallback(null, function() {
+
+});
+
+    var options = new google.search.DrawOptions();
+    options.setSearchFormRoot('cse-search-form');
+
+    options.setAutoComplete(true);
+    customSearchControl.draw('cse', options);
+
+var match = location.search.match(/q=([^&]*)(&|$)/);
+if(match && match[1]){
+    var search = decodeURIComponent(match[1]);
+    customSearchControl.execute(search);
+}
+
+  });
+</script>

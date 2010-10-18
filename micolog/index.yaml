@@ -120,6 +120,12 @@ indexes:
   - name: entrytype
   - name: published
   - name: readtimes
+
+- kind: Entry
+  properties:
+  - name: entrytype
+  - name: published
+  - name: readtimes
     direction: desc
 
 - kind: Entry
@@ -128,6 +134,14 @@ indexes:
   - name: published
   - name: slug
   - name: date
+
+- kind: Entry
+  properties:
+  - name: entrytype
+  - name: published
+  - name: sticky
+  - name: date
+    direction: desc
 
 - kind: Entry
   properties:
