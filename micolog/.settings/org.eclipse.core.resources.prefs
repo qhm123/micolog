@@ -1,5 +1,7 @@
-#Mon Oct 18 11:18:34 CST 2010
+#Fri Nov 12 12:23:41 CST 2010
 eclipse.preferences.version=1
 encoding/admin.py=utf-8
+encoding/base.py=utf-8
 encoding/blog.py=utf-8
+encoding/filter.py=utf-8
 encoding/model.py=utf-8

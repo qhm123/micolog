@@ -74,14 +74,14 @@ a,a visited{color:#888;text-decoration:none;}
 #cancel-comment-reply a{text-decoration:none;font-size:12px; color:#999;}
 #cancel-comment-reply a:hover{color:#356aa0;}
 .ping_border{display:none;}
-#respond form input {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:22%;padding:3px 0px 3px 50px;margin-right:10px;border:1px solid #ccf;}
+#respond form input {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:173px;padding:3px 0px 3px 50px;margin-right:8px;border:1px solid #ccf;}
 #respond form div label {margin-left:-40px;}
-#respond form div label small {color:#777; font-size:14px; position:relative;left:-25%;}
+#respond form div label small {color:#777; font-size:14px; position:relative;left:-192px;}
 *html #respond form div label small {position:relative; top:-5px;}
 *+html #respond form div label small {position:relative; top:-5px;}
 #commentform{padding-top:10px;}
 #respond form input:hover,#commentform #submit:hover,#commentform textarea:hover{border:1px solid #356aa0;}
-#commentform textarea {font:14px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;color:#333;border:1px solid #ccf;background-color:#fff;width:99%;height:100px;}
+#commentform textarea {font:14px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;color:#333;border:1px solid #ccf;background-color:#fff;width:99%;height:100px;margin:2px 0px;}
 #commentform #reply_notify_mail {border:0px;width:20px; margin-right:2px;}
 #commentform #submit{font-size:16px;color:#000;background-color:#fff;width:20%;padding:1px 5px;margin:-5px 0 10px 0;border:1px solid #ccf;cursor:pointer;}
 #commentsnavi a,#commentsnavi span{display:block;padding:4px;margin:1px;float:left;border:1px solid #cccccc;text-decoration:none}
