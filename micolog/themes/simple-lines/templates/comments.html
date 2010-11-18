@@ -1,6 +1,4 @@
-﻿{% if entry.comments.count %}
-
-<div class="comment_border">
+﻿<div class="comment_border">
 <h5><span class="comment-hint">评论列表</span></h5>
 <ol id="commentlist" class="commentlist clearfix">
 	{% for comment in comments %}
@@ -20,7 +18,6 @@
 {{comments_nav.nav}}
 </div>
 </div>
-{% endif %}
 
 {% if entry.allow_comment %}
 <div id="respond">

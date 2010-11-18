@@ -1,5 +1,6 @@
-#Fri Nov 12 12:23:41 CST 2010
+#Mon Nov 15 15:56:04 CST 2010
 eclipse.preferences.version=1
+encoding//plugins/wapblog/wapblog.py=utf-8
 encoding/admin.py=utf-8
 encoding/base.py=utf-8
 encoding/blog.py=utf-8
