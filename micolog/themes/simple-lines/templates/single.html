@@ -2,7 +2,7 @@
 {% block title %} {{entry.title}} - {{blog.title}} {% endblock %}
 {% block head_block %}
 {% if entry %}
-{%if entry.strtags%}<meta name="Keywords" content="{{entry.strtags}}" />{%endif%}
+{%if entry.strtags%}<meta name="Keywords" content="鸣,{{entry.strtags}}" />{%endif%}
 {%if entry.excerpt%}<meta name="Description" content="{{entry.excerpt|escape}}" />{%endif%}
 <link rel="canonical" href="{{blog.baseurl}}/{{ entry.link }}" />
 {% endif %}

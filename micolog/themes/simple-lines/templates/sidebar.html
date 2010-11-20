@@ -38,9 +38,8 @@
     <div class="widget_tag_cloud">
         <h3><span>标签</span></h3>
         <div>
-        {% for t in alltags %}
-            <a title="{{ t.tagcount }} pages" href="/tag/{{t.tag|urlencode}}" style='font-size:{{ t.tagcount|add:10 }}px;'>{{t.tag}}</a>
-        {%endfor%}
+        {% mf tagfilter %}
+        {% endmf %}
         </div>
     </div>
     <div class="widget_archive">
