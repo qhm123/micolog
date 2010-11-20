@@ -1,7 +1,8 @@
-#Sat Nov 20 12:25:06 CST 2010
+#Sat Nov 20 14:35:21 CST 2010
 eclipse.preferences.version=1
 encoding//plugins/akismet.py=utf-8
 encoding//plugins/lightbox/lightbox.py=utf-8
+encoding//plugins/pagenavi/pagenavi.py=utf-8
 encoding//plugins/sys_plugin/sys_plugin.py=utf-8
 encoding//plugins/tagfilter.py=utf-8
 encoding//plugins/wapblog/wapblog.py=utf-8

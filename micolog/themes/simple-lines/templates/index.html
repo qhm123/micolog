@@ -49,14 +49,11 @@
 		{% endif %}
 	{%endif%}
 {% endfor %}
-<div class="navigation clearfix">
-	{% if show_prev %}
-	<div class="alignleft"><a href="/page/{{ pageindex|add:"-1" }}">&laquo; 上一页</a></div>
-	{% endif %}
-	{% if show_next %}
-	<div class="alignright"><a href="/page/{{ pageindex|add:"1" }}">下一页 &raquo;</a></div>
-	{% endif %}
-</div>
+
+{%mf pagenavi%}
+{{ pageindex }},{{ pagecount }}
+{%endmf%}
+
 {%endif%}
 </div>
 
