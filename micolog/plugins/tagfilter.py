@@ -30,7 +30,7 @@ class tagfilter(Plugin):
                </form>
                <br />
                Powered By <a href="http://qhm123.appspot.com" target="_blank">鸣</a>
-               ''' % (filter_count,)
+               ''' % (filter_count.encode,)
     
     def post(self, page):
         filter_count = page.param("filter_count")
@@ -41,7 +41,7 @@ class tagfilter(Plugin):
     def tagfilter(self, content, blog=None, *arg1, **arg2):
         filter_count = OptionSet.getValue("tagfilter_filter_count", default='2')
         filter_tags = Tag.all().filter('tagcount >', int(filter_count)).fetch(limit=1000)
-        html = "<a title='%d pages' href='/tag/%s' style='font-size:%dpx;'>%s</a>"
+        html = u"<a title='%d pages' href='/tag/%s' style='font-size:%dpx;'>%s</a>"
         tag_htmls = [html % (tag.tagcount, urllib.quote(tag.tag.encode('utf8')), tag.tagcount+10, tag.tag) for tag in filter_tags]
         data = ' '.join(tag_htmls)
-        return data
+        return data.encode('utf8')
