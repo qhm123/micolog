@@ -30,7 +30,7 @@ class tagfilter(Plugin):
                </form>
                <br />
                Powered By <a href="http://qhm123.appspot.com" target="_blank">鸣</a>
-               ''' % (filter_count.encode,)
+               ''' % (filter_count,)
     
     def post(self, page):
         filter_count = page.param("filter_count")
