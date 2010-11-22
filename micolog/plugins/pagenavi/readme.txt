@@ -1,11 +1,11 @@
-Ê¹ÓÃ·½·¨£º
+ä½¿ç”¨æ–¹æ³•ï¼š
 
-½«Ö÷ÌâÏÂµÄindex.htmlÖĞÔ­À´µÄ£¨²»Ò»¶¨ÍêÈ«ÏàÍ¬£©£º
+å°†ä¸»é¢˜ä¸‹çš„index.htmlä¸­åŸæ¥çš„ï¼ˆä¸ä¸€å®šå®Œå…¨ç›¸åŒï¼‰ï¼š
 <div id="navi">
-{% if show_prev %}<a href="/page/{{ pageindex|add:"-1" }}" >&laquo;ÉÏÒ»Ò³</a>{% endif %}
-{% if show_next %}<a href="/page/{{ pageindex|add:"1"}}" >ÏÂÒ»Ò³&raquo;</a>{% endif %} 
+{% if show_prev %}<a href="/page/{{ pageindex|add:"-1" }}" >&laquo;ä¸Šä¸€é¡µ</a>{% endif %}
+{% if show_next %}<a href="/page/{{ pageindex|add:"1"}}" >ä¸‹ä¸€é¡µ&raquo;</a>{% endif %} 
 </div>
-¸ü¸ÄÎª£º
+æ›´æ”¹ä¸ºï¼š
 {%mf pagenavi%}
 {{ pageindex }},{{ pagecount }}
 {%endmf%}
