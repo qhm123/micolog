@@ -51,7 +51,8 @@ class BasePublicPage(BaseRequestHandler):
 			.filter('published =',True)\
 			.filter('entry_parent =',0)\
 			.order('menu_order')
-		blogroll=Link.all().filter('linktype =','blogroll')
+		#blogroll=Link.all().filter('linktype =','blogroll')
+		blogroll=Link.all()
 		archives=Archive.all().order('-year').order('-month').fetch(12)
 		alltags=Tag.all()
 		self.template_vals.update({

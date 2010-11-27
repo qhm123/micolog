@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import os,logging
 from google.appengine.api import users
 from google.appengine.ext import db
