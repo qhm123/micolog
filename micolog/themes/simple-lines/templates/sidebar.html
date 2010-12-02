@@ -7,7 +7,7 @@
         <h3><span>热门文章</span></h3>
         <ul>
         {% for entry in blog.hotposts %}
-            <li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}">{{entry.title|escape}}[{{entry.readtimes}}]</a></li>
+            <li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}[{{entry.readtimes}}]">{{entry.title|escape}}[{{entry.readtimes}}]</a></li>
         {%endfor%}
         </ul>
     </div>
@@ -15,7 +15,7 @@
         <h3><span>冷门文章</span></h3>
         <ul>
         {% for entry in blog.coldposts %}
-            <li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}">{{entry.title|escape}}[{{entry.readtimes}}]</a></li>
+            <li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}[{{entry.readtimes}}]">{{entry.title|escape}}[{{entry.readtimes}}]</a></li>
         {%endfor%}
         </ul>
     </div>
