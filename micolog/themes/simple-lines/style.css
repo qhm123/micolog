@@ -75,6 +75,8 @@ a,a visited{color:#888;text-decoration:none;}
 #cancel-comment-reply a:hover{color:#356aa0;}
 .ping_border{display:none;}
 #respond form input {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:173px;padding:3px 0px 3px 50px;margin-right:8px;border:1px solid #ccf;}
+#respond form #checkarea {margin-bottom: 2px;}
+#respond form #checkret {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:20px;padding:3px 0 3px 0;margin-right:8px;border:1px solid #ccf;}
 #respond form div label {margin-left:-40px;}
 #respond form div label small {color:#777; font-size:14px; position:relative;left:-192px;}
 *html #respond form div label small {position:relative; top:-5px;}
