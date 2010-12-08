@@ -64,7 +64,7 @@ class happychristmas(Plugin):
         try:
             ishome = bool(content.strip())
         except:
-            return ""
+            return u""
          
         showsnowman = OptionSet.getValue("happychristmas_showsnowman", default='True')
         snowmanonlyshowhome = OptionSet.getValue("happychristmas_snowmanonlyshowhome", default='True')
@@ -102,5 +102,5 @@ class happychristmas(Plugin):
             if snowmanonlyshowhome != 'True':
                 list.append(snowman)
             
-        data = ''.join(list)
-        return data
+        data = u''.join(list)
+        return data.encode('utf8')
