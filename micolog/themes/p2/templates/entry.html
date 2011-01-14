@@ -1,0 +1,35 @@
+<li id="prologue-{{entry.key}}">
+
+	<a href="#" title="Posts by {{ entry.author }}">
+		<img alt="avatar" src="http://1.gravatar.com/avatar/702af763a482f86ffd0484d07c3d959e?s=48&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&amp;r=G" class="avatar avatar-48 photo" height="48" width="48">
+	</a>
+
+	<h4>
+		<a href="#" title="Posts by {{ entry.author }}">{{ entry.author }}</a>
+
+		<span class="meta">
+			<abbr title="{{ entry.date|datetz:"Y.m.d" }}">{{ entry.date|datetz:"Y.m.d" }}</abbr>
+			<span class="actions">
+				<a href="/{{ entry.link }}" class="thepermalink">Permalink</a>
+					| <a rel="nofollow" class="comment-reply-link" href="/{{ entry.link }}#respond" onclick="return addComment.moveForm('prologue-{{ entry.key }}', '0', 'respond', '{{ entry.key }}')">Reply</a>
+				{% if self.is_admin %}
+					| <a href="{{ entry.edit_url }}" class="edit-post-link" rel="{{ entry.key }}">Edit</a>
+				{% endif %}
+			</span>
+
+			<span class="tags">
+				{% if entry.tags %}{% for tag in entry.tags %}<a href="/tag/{{ tag|urlencode }}">{{ tag }}</a>{% endfor %}{% endif %}
+			</span>
+
+		</span>
+	</h4>
+
+	<div class="postcontent{% if self.is_admin %} editarea{% endif %}" id="content-{{entry.key}}">
+		<h2><a href="/{{ entry.link }}">{{ entry.title }}</a></h2>
+		{{ entry.content }}
+	</div>
+
+	<div class="bottom_of_entry">&nbsp;</div>
+	
+	{% include "comments.html" %}
+</li>

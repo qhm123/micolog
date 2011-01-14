@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+{%mf head%}
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="Keywords" content="鸣,编程,人生,技术,杂谈,影音书,微博" />
+<meta name="Description" content="欢迎来到鸣的博客，我在这里记录生活和分享技术。" />
+<meta name="google-site-verification" content="vteEqiKZiwbjSN9TwkKliy8TfKK47D2HK-FcvkRIVyM" />
+<meta name="y_key" content="86b1d861d28eb7a6" />
+<title>{% block title %}{{ blog.title}}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="/themes/{{ blog.theme_name }}/style.css" />
+<link rel="alternate" type="application/atom+xml" title="{{ blog.title }}" href="{{ blog.feedurl }}" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/static/wlwmanifest.xml" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="pingback" href="/pingback" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wp_locale_txt = {
+	month_01: "January",
+	month_02: "February",
+	month_03: "March",
+	month_04: "April",
+	month_05: "May",
+	month_06: "June",
+	month_07: "July",
+	month_08: "August",
+	month_09: "September",
+	month_10: "October",
+	month_11: "November",
+	month_12: "December",
+	monthabbrev_01: "Jan",
+	monthabbrev_02: "Feb",
+	monthabbrev_03: "Mar",
+	monthabbrev_04: "Apr",
+	monthabbrev_05: "May",
+	monthabbrev_06: "Jun",
+	monthabbrev_07: "Jul",
+	monthabbrev_08: "Aug",
+	monthabbrev_09: "Sep",
+	monthabbrev_10: "Oct",
+	monthabbrev_11: "Nov",
+	monthabbrev_12: "Dec",
+	weekday_0: "Sunday",
+	weekday_1: "Monday",
+	weekday_2: "Tuesday",
+	weekday_3: "Wednesday",
+	weekday_4: "Thursday",
+	weekday_5: "Friday",
+	weekday_6: "Saturday",
+	weekdayabbrev_01: "Sun",
+	weekdayabbrev_02: "Mon",
+	weekdayabbrev_03: "Tue",
+	weekdayabbrev_04: "Wed",
+	weekdayabbrev_05: "Thu",
+	weekdayabbrev_06: "Fri",
+	weekdayabbrev_07: "Sat"
+};
+/* ]]> */
+</script>
+<script type="text/javascript">
+	// <![CDATA[
+	// P2 Configuration
+	var ajaxUrl = "http://localhost/wp-admin/admin-ajax.php?p2ajax=true";
+	var updateRate = "30000"; // 30 seconds
+	var nonce = "94286e7653";
+	var login_url = "/admin";
+	var templateDir  = "/themes/{{ blog.theme_name }}";
+	var isFirstFrontPage = 0;
+	var isFrontPage = 0;
+	var isSingle = 1;
+	var isPage = 0;
+	var isUserLoggedIn = 0;
+	var prologueTagsuggest = 1;
+	var prologuePostsUpdates = 1;
+	var prologueCommentsUpdates = 1;
+	var getPostsUpdate = 0;
+	var getCommentsUpdate = 0;
+	var inlineEditPosts =  1;
+	var inlineEditComments =  1;
+	var wpUrl = "{{ blog.baseurl }}/";
+	var rssUrl = "{{ blog.feedurl }}";
+	var pageLoadTime = "2010-12-05 03:05:24";
+	var latestPermalink = "http://localhost/?p=21";
+	var original_title = document.title;
+	var commentsOnPost = new Array;
+	var postsOnPage = new Array;
+	var postsOnPageQS = '';
+	var currPost = -1;
+	var currComment = -1;
+	var commentLoop = false;
+	var lcwidget = false;
+	var hidecomments = false;
+	var commentsLists = '';
+	var newUnseenUpdates = 0;
+	var isRtl = 0;
+	// ]]>
+</script>
+
+<script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/jquery.jeditable.mini.js"></script>
+<script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/jquery.scrollTo-min.js"></script>
+<script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/p2.js"></script>
+<script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/comment-reply.dev.js"></script>
+<script type="text/javascript" src="/themes/{{ blog.theme_name }}/js/wp-locale.js"></script>
+{% block head_block %}{% endblock %}
+{%endmf%}
+</head>
+<body>
+
+<div id="header">
+	<div class="sleeve">
+		<h1><a href="{{ blog.baseurl }}">{{ blog.title}}</a></h1>
+		<small>{{ blog.subtitle}}</small>
+		<a class="secondary" href="{{ blog.baseurl }}"></a>
+	</div>
+</div>
+
+<div id="wrapper">
+	{% include "sidebar.html" %}
+	
+	{% block content %}{% endblock %}
+	
+	<div class="clear"></div>
+</div> <!-- // wrapper -->
+
+<div id="footer">
+	<p>
+	    P2 theme by <a href="http://automattic.com/" rel="designer">Automattic</a>. Modify by qhm123.
+	</p>
+</div>
+
+<div id="notify"></div>
+
+<div id="help">
+	<dl class="directions">
+		<dt>c</dt><dd>compose new post</dd>
+		<dt>j</dt><dd>next post/next comment</dd>
+		<dt>k</dt> <dd>previous post/previous comment</dd>
+		<dt>r</dt> <dd>reply</dd>
+		<dt>e</dt> <dd>edit</dd>
+		<dt>o</dt> <dd>show/hide comments</dd>
+		<dt>t</dt> <dd>go to top</dd>
+		<dt>l</dt> <dd>go to login</dd>
+		<dt>h</dt> <dd>show/hide help</dd>
+		<dt>esc</dt> <dd>cancel</dd>
+	</dl>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready( function() {
+		function hideComments() {
+			jQuery('.commentlist').hide();
+			jQuery('.discussion').show();
+		}
+		function showComments() {
+			jQuery('.commentlist').show();
+			jQuery('.discussion').hide();
+		}
+					
+		jQuery("#togglecomments").click( function(){
+			if (jQuery('.commentlist').css('display') == 'none') {
+				showComments();
+			} else {
+				hideComments();
+			}
+			return false;
+		});
+	});
+</script>
+</body>
+</html>
