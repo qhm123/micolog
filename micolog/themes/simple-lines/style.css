@@ -42,7 +42,7 @@ a,a visited{color:#888;text-decoration:none;}
 .post-content ol,.post-content ul{margin-bottom:10px;margin-left:2em;}
 .post-content img{-webkit-box-shadow:2px 2px 6px #999;-moz-box-shadow:2px 2px 6px #999;padding:5px;}
 .post-content a:hover {color:#356aa0;}
-.post-home .post-copyright{padding-left:8px;padding-bottom:8px;}
+.post-home .post-copyright{padding-left:8px;padding-bottom:8px;font-size:14px;color:#999;}
 .wp-caption {border: 1px solid #ddd;text-align: center;background-color: #f3f3f3;padding-top: 4px;margin: 10px;-moz-border-radius: 3px;-khtml-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
 .wp-caption img {margin: 0;padding: 0;border: 0 none;}
 .wp-caption-dd {font-size:11px;line-height: 17px;padding:0 4px 5px;margin: 0;}
@@ -148,3 +148,6 @@ a,a visited{color:#888;text-decoration:none;}
 #foot{width:100%;font-size:12px;color:#777;margin-top:1em;}
 #foot a{display:block;float:left;padding:5px 10px;border:1px solid #ccf;margin-right:-1px;}
 #foot .footr{float:right;padding:5px 10px;border:1px solid #ccf;margin:0px;}
+
+/*my modify*/
+#pagenavi{border:1px solid #CCF;margin:-10px 0 10px;padding:8px;text-align:center;}

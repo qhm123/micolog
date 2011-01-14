@@ -1,7 +1,22 @@
 ﻿<div id="sidebar">
-    <div class="widget_recent_entries">
+<!--    <div class="widget_recent_entries">
         <h3><span>公告</span></h3>
         <ul>{{blog.blognotice}}</ul>
+    </div>-->
+    <div class="widget_tag_cloud">
+        <h3><span>热门标签</span></h3>
+        <div>
+        {% mf tagfilter %}
+        {% endmf %}
+        </div>
+    </div>
+    <div class="widget_categories">
+        <h3><span>分类</span></h3>
+        <ul>
+        {%for cate in categories%}
+            <li><a href="/category/{{cate.slug}}">{{cate.name}}[{{cate.count}}]</a></li>
+        {%endfor%}	
+        </ul>
     </div>
     <div class="widget_recent_entries">
         <h3><span>热门文章</span></h3>
@@ -26,21 +41,6 @@
             <li><a href="/{{comment.entry.link}}#comment-{{comment.key.id}}">{{comment.author}}:</a> {{comment.shortcontent}}...</li>
         {%endfor%}
         </ul>
-    </div>
-    <div class="widget_categories">
-        <h3><span>分类</span></h3>
-        <ul>
-        {%for cate in categories%}
-            <li><a href="/category/{{cate.slug}}">{{cate.name}}[{{cate.count}}]</a></li>
-        {%endfor%}	
-        </ul>
-    </div>
-    <div class="widget_tag_cloud">
-        <h3><span>热门标签</span></h3>
-        <div>
-        {% mf tagfilter %}
-        {% endmf %}
-        </div>
     </div>
     <div class="widget_archive">
         <h3><span>归档</span></h3>
@@ -80,8 +80,8 @@
         {%endfor%}
         </ul>
     </div>
-    <div class="widget_recent_entries">
+<!--    <div class="widget_recent_entries">
         <h3><span>博客信息</span></h3>
         <ul>{% mf siteinfo %}{% endmf %}</ul>
-    </div>
+    </div>-->
 </div>
