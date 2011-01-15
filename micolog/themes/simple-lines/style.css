@@ -34,7 +34,7 @@ a,a visited{color:#888;text-decoration:none;}
 .post-title-single span{position:absolute;top:0px;right:0px;padding:2px;border:1px solid #ccf;border-top:none;border-right:none;}
 .post-messages{height:29px;width:706px;overflow:hidden;}
 .post-messages-1,.post-messages-2{float:left;border:1px solid #ccf;margin:0 0 -1px -1px;color:#777;padding:3px 10px;height:22px;}
-.post-messages-2{max-width:230px;overflow:hidden;}
+.post-messages-2{max-width:320px;overflow:hidden;}
 .post-messages-3{position:absolute;top:0px;right:0px;padding:3px 10px;border:1px solid #ccf;border-top:none;border-right:none;}
 .more-link{float:right;}
 .post-title a:hover,.post-messages a:hover,.more-link a:hover{color:#356aa0;}
