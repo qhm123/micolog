@@ -666,7 +666,10 @@ class Entry(BaseModel):
 			return self._relatepost
 		else:
 			if self.tags:
-				self._relatepost= Entry.gql("WHERE published=True and tags IN :1 and post_id!=:2 order by post_id desc ",self.tags,self.post_id).fetch(5)
+				try:
+					self._relatepost= Entry.gql("WHERE published=True and tags IN :1 and post_id!=:2 order by post_id desc ",self.tags,self.post_id).fetch(5)
+				except:
+					self._relatepost= []
 			else:
 				self._relatepost= []
 			return self._relatepost

@@ -405,7 +405,7 @@ class FeedHandler(BaseRequestHandler):
 			last_updated = last_updated.strftime("%a, %d %b %Y %H:%M:%S +0000")
 		for e in entries:
 			e.formatted_date = e.date.strftime("%a, %d %b %Y %H:%M:%S +0000")
-		self.response.headers['Content-Type'] = 'application/rss+xml'
+		self.response.headers['Content-Type'] = 'application/rss+xml; charset=utf8'
 		self.render2('views/rss.xml',{'entries':entries,'last_updated':last_updated})
 
 class CommentsFeedHandler(BaseRequestHandler):
