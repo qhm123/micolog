@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<document xmlns:bbs="http://www.baidu.com/search/bbs_sitemap.xsd"> 
+{% spaceless %}
+<webSite>http://qhm123.appspot.com</webSite> 
+<webMaster>qhm123@live.cn</webMaster> 
+<updatePeri>24</updatePeri>
+<updatetime>{{ updatetime }}</updatetime>
+<version>WordPress</version>
+{% for url in urlset %}
+<item> 
+<link>{{ url.location|escape }}</link> 
+<title>{{ url.title }}</title> 
+<pubDate>{{ url.lastmod|date:"Y-m-d H:i:s" }}</pubDate> 
+</item> 
+{% endfor %}
+{% endspaceless %}
+</document>

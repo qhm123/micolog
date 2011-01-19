@@ -454,9 +454,36 @@ class SitemapHandler(BaseRequestHandler):
 				addurl(loc,None,'weekly',0.5)
 
 
-##		self.response.headers['Content-Type'] = 'application/atom+xml'
+		self.response.headers['Content-Type'] = 'text/xml;charset=utf8'
 		self.render2('views/sitemap.xml',{'urlset':urls})
 
+class SitemapBaiduHandler(BaseRequestHandler):
+	@cache(time=36000)
+	def get(self, tags=None):
+		urls = []
+		
+		def addurl(loc, lastmod=None, title=None):
+			url_info = {
+				'location': loc,
+				'lastmod': lastmod,
+				'title': title,
+			}
+			urls.append(url_info)
+
+		entries = Entry.all().filter('published =',True).order('-date').fetch(g_blog.sitemap_entries)
+
+		for item in entries:
+			loc = "%s/%s" % (g_blog.baseurl, item.link)
+			addurl(loc, item.mod_date or item.date, item.title)
+			
+		if len(entries) > 0:
+			item = entries[0]
+			updatetime = item.mod_date or item.date
+		else:
+			updatetime = datetime.time()
+
+		self.response.headers['Content-Type'] = 'application/xml;charset=utf8'
+		self.render2('views/sitemap_baidu.xml',{'urlset':urls, 'updatetime': updatetime,})
 
 class Error404(BaseRequestHandler):
 	@cache(time=36000)
@@ -710,7 +737,8 @@ def main():
 			('/skin',ChangeTheme),
 			('/feed', FeedHandler),
 			('/feed/comments',CommentsFeedHandler),
-			('/sitemap', SitemapHandler),
+			('/sitemap.xml', SitemapHandler),
+			('/sitemap_baidu.xml', SitemapBaiduHandler),
 			('/post_comment',Post_comment),
 			('/page/(?P<page>\d+)', MainPage),
 			('/category/(.*)',entriesByCategory),

@@ -21,6 +21,7 @@
 <p class="post-copyright">
 作者: <a href="{{blog.baseurl}}">鸣</a> | 可以转载, 但必须以超链接形式标明文章原始出处和作者信息及版权声明</br>
 网址: <a href="{{blog.baseurl}}/{{ entry.link }}">{{blog.baseurl}}/{{ entry.link }}</a>
+<a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a><script language="javascript" type="text/javascript" src="http://www.bshare.cn/button.js#uuid=&amp;style=2&amp;textcolor=#000000&amp;bgcolor=none&amp;bp=sinaminiblog,douban,9dian,blogbaidu,blogsina,renren,qqmb,qzone&amp;ssc=false&amp;sn=true&amp;text=分享"></script>
 </p>
 
 {%mf after_entry_content%}
@@ -38,7 +39,7 @@
 	<div class="alignright">{%for next in entry.next%}<a href="/{{next.link}}">{{next.title}}»</a>{%endfor%}</div>
 </div>
 
-{%if relateposts%}
+<!--{%if relateposts%}
 <div id="post-title-page">
 	<h5><span>相关阅读</span></h5>
 	<ul class="cate">
@@ -47,7 +48,22 @@
 	{%endfor%}
 	</ul>
 </div>
-{%endif%}
+{%endif%}-->
+
+<div class="wumii-hook">
+    <input type="hidden" name="wurl" value="{{blog.baseurl}}/{{ entry.link }}" />
+    <input type="hidden" name="wtitle" value="{{entry.title}}" />
+</div>
+<script>
+    var wumiiSitePrefix = "{{blog.baseurl}}";
+</script>
+<script type="text/javascript" id="wumiiRelatedItems" src="http://widget.wumii.com/ext/relatedItemsWidget.htm?type=1&amp;mode=3&amp;num=5"></script>
+<a href="http://www.wumii.com/widget/relatedItems.htm" style="border:0;">
+    <img src="http://static.wumii.com/images/pixel.png" alt="无觅相关文章插件" style="border:0;padding:0;margin:0;" />
+</a>
+<p style="display: none;">
+    {%for tag in entry.tags%}<a rel="tag">{{tag}}</a>{%endfor%}
+</p>
 
 {% else %}
 <p>对不起, 没有符合的页面。</p>

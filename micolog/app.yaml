@@ -13,6 +13,10 @@ handlers:
   static_files: static/robots.txt
   upload: static/robots.txt
   
+- url: /wumii-verification.htm
+  static_files: static/wumii-verification.htm
+  upload: static/wumii-verification.htm
+  
 - url: /tinymce/.*
   script: $PYTHON_LIB/google/appengine/ext/zipserve
 
