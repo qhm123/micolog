@@ -29,7 +29,7 @@
 	<div class="post-messages-1">日期: {{ entry.date|datetz:"Y.m.d" }}</div>
 	<div class="post-messages-2">标签: {% if entry.tags%}{%for tag in entry.tags%} <a href="/tag/{{tag|urlencode}}">{{tag}}</a> {%endfor%}{%endif%}</div>
 	<div class="post-messages-2">分类: {%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a> {%endfor%}</div>
-	<!--<span class="more-link">{%if self.is_admin%} <a href="{{entry.edit_url}}">编辑</a> {%endif%}</span>-->
+	<span class="more-link">{%if self.is_admin%} <a href="{{entry.edit_url}}">编辑</a> {%endif%}</span>
 </div>
 {%endmf%}
 </div>
