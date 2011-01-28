@@ -1,4 +1,4 @@
-#Mon Dec 06 12:54:38 CST 2010
+#Fri Jan 28 11:23:06 CST 2011
 eclipse.preferences.version=1
 encoding//app/html_filter.py=utf-8
 encoding//plugins/akismet.py=utf-8
@@ -7,6 +7,7 @@ encoding//plugins/happychristmas/happychristmas.py=utf-8
 encoding//plugins/lightbox/lightbox.py=utf-8
 encoding//plugins/pagenavi/pagenavi.py=utf-8
 encoding//plugins/pagenavi/readme.txt=UTF-8
+encoding//plugins/pingservice/pingservice.py=utf-8
 encoding//plugins/secretentry/secretentry.py=utf-8
 encoding//plugins/siteinfo.py=utf-8
 encoding//plugins/sys_plugin/sys_plugin.py=utf-8
@@ -14,6 +15,7 @@ encoding//plugins/tagfilter.py=utf-8
 encoding//plugins/wapblog/wapblog.py=utf-8
 encoding//themes/default/templates/base.html=UTF-8
 encoding/admin.py=utf-8
+encoding/api_rpc.py=utf-8
 encoding/base.py=utf-8
 encoding/blog.py=utf-8
 encoding/filter.py=utf-8
