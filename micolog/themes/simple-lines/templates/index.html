@@ -14,7 +14,6 @@
 			<div class="post-messages-1">日期：{{ entry.date|datetz:"Y.m.d" }}</div>
 			<div class="post-messages-2">标签：{% if entry.strtags %}{%for tag in entry.tags%} <a href="/tag/{{tag}}">{{tag}}</a> {%endfor%}{%endif%}</div>
 			<div class="post-messages-2">分类：{%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a> {%endfor%}</div>
-			<div class="post-messages-3"><a href="/{{entry.link}}#comments">{{entry.commentcount}} Comments</a></div>
 			</div>
 		</div>
 {% endfor %}
@@ -30,7 +29,6 @@
 			<div class="post-messages-1">日期：{{ entry.date|datetz:"Y.m.d" }}</div>
 			<div class="post-messages-2">标签：{% if entry.strtags %}{%for tag in entry.tags%} <a href="/tag/{{tag}}">{{tag}}</a> {%endfor%}{%endif%}</div>
 			<div class="post-messages-2">分类：{%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a> {%endfor%}</div>
-			<div class="post-messages-3"><a href="/{{entry.link}}#comments">{{entry.commentcount}} Comments</a></div>
 			</div>
 		</div>
 		{% else %}

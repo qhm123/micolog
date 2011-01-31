@@ -1,6 +1,6 @@
 *{margin:0; padding:0}img {border:0;}
-body{font:16px/160% 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;color:#000;background-color:#FAFAFA;}
-#container {width:960px;margin:0 auto;}
+body{font:16px/160% 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;color:#000;background-color:#F1F1F1;}
+#container {width:960px;margin:20px auto;padding:0 20px;background:white;}
 blockquote{margin:10px 0;padding-left:10px;background:#F4F4F4; border-left:4px solid #ccf; color:#666}
 h1{font-size:160%;}h2{font-size:150%;}h3{font-size:140%;}h4{font-size:130%;}h5{font-size:120%;}h6{font-size:110%;}
 h1,h1 a,h2,h2 a,h3,h3 a,h4,h4 a,h5,h5 a,h6,h6 a{font-weight:normal;line-height:160%;}
@@ -9,7 +9,7 @@ a,a visited{color:#888;text-decoration:none;}
 /*Header*/
 #header-title{width:100%;height:45px;}
 #logo a{float:left;color:#356aa0;font-size:28px;line-height:65px;text-decoration:none;}
-#description{float:left;color:#777;font-size:12px;margin:30px auto auto 5px;}
+#description{float:left;color:#777;font-size:12px;margin:28px auto auto 5px;}
 #searchform{float:right;color:#777;font-size:12px;margin:30px auto auto 0px;}
 #searchform #q{float:left;width:180px;border:0px;padding:2px 5px 0px;}
 #searchform input,#searchform input:hover{border:0px;font-family:'Microsoft YaHei',Arial;color:#777;}
@@ -27,22 +27,22 @@ a,a visited{color:#888;text-decoration:none;}
 .post-content{padding:5px 10px 1em;}
 #postlist,#left-content-single{width:705px;float:left;}
 .post-home{border:1px solid #ccf; position:relative;margin-bottom:1.5em;}
-.post-title h2{font-size:145%;line-height:25px;margin-top:5px;max-width:600px;color:#356aa0;}
+.post-title h2{font-size:145%;line-height:25px;margin-top:5px;color:#356aa0;}
 .csticky{margin:0px -7px 0px 7px;}
 .post-title h2 a{padding:5px 10px;color:#356aa0;}
 .post-title-single h1{color:#356aa0;font-size:145%; line-height:25px;margin-top:3px;padding:5px 10px;}
 .post-title-single span{position:absolute;top:0px;right:0px;padding:2px;border:1px solid #ccf;border-top:none;border-right:none;}
-.post-messages{height:29px;width:706px;overflow:hidden;}
-.post-messages-1,.post-messages-2{float:left;border:1px solid #ccf;margin:0 0 -1px -1px;color:#777;padding:3px 10px;height:22px;}
+.post-messages{height:29px;width:706px;overflow:hidden;font-size:14px;}
+.post-messages-1,.post-messages-2{float:left;border:1px solid #ccf;margin:8px 0 -1px -1px;color:#777;padding:0px 4px;height:20px;}
 .post-messages-2{max-width:320px;overflow:hidden;}
 .post-messages-3{position:absolute;top:0px;right:0px;padding:3px 10px;border:1px solid #ccf;border-top:none;border-right:none;}
 .more-link{float:right;}
 .post-title a:hover,.post-messages a:hover,.more-link a:hover{color:#356aa0;}
-.post-content p{margin-bottom:10px;text-indent: 2em;}
+.post-content p{margin-bottom:20px;}
 .post-content ol,.post-content ul{margin-bottom:10px;margin-left:2em;}
 .post-content img{-webkit-box-shadow:2px 2px 6px #999;-moz-box-shadow:2px 2px 6px #999;padding:5px;}
 .post-content a:hover {color:#356aa0;}
-.post-home .post-copyright{padding-left:8px;padding-bottom:8px;font-size:14px;color:#999;}
+.post-home .post-copyright{padding-left:8px;font-size:14px;color:#999;}
 .wp-caption {border: 1px solid #ddd;text-align: center;background-color: #f3f3f3;padding-top: 4px;margin: 10px;-moz-border-radius: 3px;-khtml-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
 .wp-caption img {margin: 0;padding: 0;border: 0 none;}
 .wp-caption-dd {font-size:11px;line-height: 17px;padding:0 4px 5px;margin: 0;}
@@ -76,19 +76,20 @@ a,a visited{color:#888;text-decoration:none;}
 .ping_border{display:none;}
 #respond form input {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:173px;padding:3px 0px 3px 50px;margin-right:8px;border:1px solid #ccf;}
 #respond form #checkarea {margin-bottom: 2px;}
-#respond form #checkret {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:20px;padding:3px 0 3px 0;margin-right:8px;border:1px solid #ccf;}
+#respond form #checkret {font:12px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;width:40px;padding:3px 0 3px 0;margin-right:8px;border:1px solid #ccf;}
 #respond form div label {margin-left:-40px;}
 #respond form div label small {color:#777; font-size:14px; position:relative;left:-192px;}
 *html #respond form div label small {position:relative; top:-5px;}
 *+html #respond form div label small {position:relative; top:-5px;}
 #commentform{padding-top:10px;}
 #respond form input:hover,#commentform #submit:hover,#commentform textarea:hover{border:1px solid #356aa0;}
-#commentform textarea {font:14px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;color:#333;border:1px solid #ccf;background-color:#fff;width:99%;height:100px;margin:2px 0px;}
+#commentform textarea {font:14px 'Microsoft YaHei',Arial,Tahoma,Sans-Serif;color:#333;border:1px solid #ccf;width:98%;height:100px;margin:2px 0px;}
 #commentform #reply_notify_mail {border:0px;width:20px; margin-right:2px;}
 #commentform #submit{font-size:16px;color:#000;background-color:#fff;width:20%;padding:1px 5px;margin:-5px 0 10px 0;border:1px solid #ccf;cursor:pointer;}
 #commentsnavi a,#commentsnavi span{display:block;padding:4px;margin:1px;float:left;border:1px solid #cccccc;text-decoration:none}
 #commentsnavi{clear:both;height:20px;margin:8px 0px}
 #hint {margin-left:0px;}
+input[type="text"], textarea {-webkit-box-shadow: rgba(0, 0, 0, 0.09375) 1px 1px 1px inset;background:#F9F9F9;}
 /*pages*/
 #post-title-page h1{font-size:145%;color:#356aa0;}
 #post-title-page span{border:1px solid #ccf;border-bottom:0px;padding:0px 10px 3px;}
