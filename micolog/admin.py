@@ -681,7 +681,7 @@ class admin_links(BaseRequestHandler):
 		self.render2('views/admin/links.html',
 		 {
 		  'current':'links',
-		  'links':Link.all().filter('linktype =','blogroll')#.order('-createdate')
+		  'links':Link.all()#.filter('linktype =','blogroll')#.order('-createdate')
 		  }
 		)
 	@requires_admin

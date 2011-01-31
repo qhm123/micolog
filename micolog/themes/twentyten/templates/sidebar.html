@@ -3,31 +3,34 @@
     <li id="search-2" class="widget-container widget_search">
       <form role="search" method="get" id="searchform" action="http://www.google.com/search" >
         <div>
-<input type="text" value="Search..." onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" name="as_q" id="s" />       
+		<input type="text" value="Search..." onfocus="if (this.value == 'Search...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search...';}" name="as_q" id="s" />       
 		<input type="image" src="/themes/{{ blog.theme_name }}/images/transparent.gif" id="go" alt="Search" title="Search" />
 		<input name="as_sitesearch" value="{{blog.domain}}" type="hidden">
 		<input type="submit" value="搜索" id="searchsubmit">
         </div>
       </form>
     </li>
+    
     <li id="categories-2" class="widget-container widget_categories">
-      <h3 class="widget-title">分类</h3>
+      <h3 class="widget-title">Categories</h3>
       <ul>
- 	{%for cate in categories%}
-  <li>	<a href="/category/{{cate.slug}}">{{cate.name}}({{cate.count}})</a></li>
- 	{%endfor%}
+ 		{%for cate in categories%}
+ 	 	<li><a href="/category/{{cate.slug}}">{{cate.name}}({{cate.count}})</a></li>
+ 		{%endfor%}
       </ul>
     </li>
+    
     <li id="recent-posts-2" class="widget-container widget_recent_entries">
-      <h3 class="widget-title">最新日志</h3>
+      <h3 class="widget-title">Latest posts</h3>
       <ul>
         {% for entry in blog.recentposts %}
 		<li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}">{{entry.title|escape}}({{entry.readtimes}})</a></li>
         {%endfor%}
       </ul>
     </li>
+    
     <li id="recent-comments-2" class="widget-container widget_recent_comments">
-      <h3 class="widget-title">最新评论</h3>
+      <h3 class="widget-title">Latest comments</h3>
       <ul id="recentcomments">
         {% for comment in recent_comments %}
         <li><a href="/{{comment.entry.link}}#comment-{{comment.key.id}}">{{comment.author}}:</a> {{comment.shortcontent}}...</li>
@@ -35,8 +38,8 @@
       </ul>
     </li>
 	
-	    <li class="widget-container widget_recent_comments">
-      <h3 class="widget-title">热门文章</h3>
+	<li class="widget-container widget_recent_comments">
+      <h3 class="widget-title">Hot posts</h3>
       <ul>
         {% for entry in blog.hotposts %}
 		<li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}">{{entry.title|escape}}({{entry.readtimes}})</a></li>
@@ -45,50 +48,30 @@
     </li>
 	
     <li id="tag_cloud-3" class="widget-container widget_tag_cloud">
-      <h3 class="widget-title">标签</h3>
+      <h3 class="widget-title">Tag cloud</h3>
       <div>
-	  {% for t in alltags %}
-<a title="{{ t.tagcount }} pages" href="/tag/{{t.tag|urlencode}}"><span style='font-size:{{ t.tagcount|add:9 }}px;'>{{t.tag}}</span></a>
-{%endfor%}
-
+		{%for t in alltags%}
+		<a title="{{ t.tagcount }} pages" href="/tag/{{t.tag|urlencode}}"><span style='font-size:{{ t.tagcount|add:9 }}px;'>{{t.tag}}</span></a>
+		{%endfor%}
 	  </div>
     </li>
+    
     <li id="archives-2" class="widget-container widget_archive">
-      <h3 class="widget-title">存档页</h3>
+      <h3 class="widget-title">Archives</h3>
       <ul>
 		{%for archive in archives%}
 		<li><a href="/{{archive.year}}/{{archive.month}}">{{archive.year}}年{{archive.month}}月({{archive.entrycount}})</a></li>
 		{%endfor%}
       </ul>
     </li>
+    
     <li id="linkcat-2" class="widget-container widget_links">
       <h3 class="widget-title">Blogroll</h3>
       <ul class='xoxo blogroll'>
-	  <li><a href="http://wjxm.org" target="_blank" title="欢迎来访维基泄密中文">维基泄密中文</a>
-{%for link in blogroll%}
-<li><a href="{{link.href}}">{{link.linktext}}</a></li>
-{%endfor%}
+		{%for link in blogroll%}
+		<li><a href="{{link.href}}">{{link.linktext}}</a></li>
+		{%endfor%}
       </ul>
-    </li>
-    <li id="meta-2" class="widget-container widget_meta">
-      <h3 class="widget-title">功能</h3>
-      <ul>
-    {%if self.is_admin or self.author%}
-     <li><a href="/admin">管理</a> </li>
-    {%endif%}
-      <li>
-     {%if self.is_login%}
-
-       <a href="{{self.logouturl}}">注销</a>
-
-     {%else%}
-       <a href="/admin">登录</a>
-
-     {%endif%}
-         </li>
-        <li><a href="{{ blog.feedurl }}" title="订阅本站 RSS 2.0">日志 <abbr title="RSS">RSS</abbr></a></li>
-        <li><a title="思想的围墙从来都没有真正打开过" href="http://wjxm.org/" target="_blank">wjxm.org</a></li>
-	   </ul>
     </li>
   </ul>
 </div>

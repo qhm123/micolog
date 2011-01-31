@@ -24,9 +24,7 @@
     {%endfor%}
   </ol>
   
-  <div class="navigation">
-{{comments_nav.nav}}
-			</div>
+  <div class="navigation">{{comments_nav.nav}}</div>
   
   {%endif%}
   <div id="respond">
@@ -88,8 +86,7 @@
     commentuser=$.cookie('comment_user');
        if (commentuser)
        {
-         //[user,email,url]=commentuser.split('#@#');
-         var tuple=commentuser.split('#@#');
+        var tuple=commentuser.split('#@#');
         var user,email,url;
         user=tuple[0];
         email=tuple[1];
@@ -103,7 +100,6 @@
          var form = this;
            if (form.author)
   		   {
-
       			 if (!form.author.value)
           		 {
           		  alert('请输入昵称.');

@@ -426,20 +426,23 @@ class SitemapHandler(BaseRequestHandler):
 		urls = []
 		def addurl(loc,lastmod=None,changefreq=None,priority=None):
 			url_info = {
-				'location':   loc,
-				'lastmod':	lastmod,
+				'location': loc,
+				'lastmod': lastmod,
 				'changefreq': changefreq,
-				'priority':   priority
+				'priority': priority
 			}
 			urls.append(url_info)
 
-		addurl(g_blog.baseurl,changefreq='daily',priority=0.9 )
+		addurl(g_blog.baseurl, changefreq='daily', priority=1)
 
 		entries = Entry.all().filter('published =',True).order('-date').fetch(g_blog.sitemap_entries)
 
 		for item in entries:
 			loc = "%s/%s" % (g_blog.baseurl, item.link)
-			addurl(loc,item.mod_date or item.date,'never',0.6)
+			if item.entrytype == 'page':
+				addurl(loc,item.mod_date or item.date,'weekly',0.4)
+			else:
+				addurl(loc,item.mod_date or item.date,'monthly',0.6)
 
 		if g_blog.sitemap_include_category:
 			cats=Category.all()
