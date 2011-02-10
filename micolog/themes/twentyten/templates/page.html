@@ -5,7 +5,6 @@
 {%if entry.strtags%}<meta name="Keywords" content="{{entry.strtags}}">{%endif%}
 {%if entry.excerpt%} <meta name="Description" content="{{entry.excerpt}}">{%endif%}
 {% endif %}
-<script type="text/javascript" src="/static/js/jquery-1.3.2.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -27,9 +26,9 @@
 </div><!-- .entry-content -->
 <div class="entry-utility">
 This entry was posted in 
- {%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a> {%endfor%} 
+ {%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a>{% if forloop.last %}{% else %},{% endif %} {%endfor%} 
  and 
- {% if entry.strtags %}Tagged: {%for tag in entry.tags%}<a href="/tag/{{tag|urlencode}}">{{tag}}</a> {%endfor%}
+ {% if entry.strtags %}Tagged: {%for tag in entry.tags%}<a href="/tag/{{tag|urlencode}}">{{tag}}</a>{% if forloop.last %}{% else %},{% endif %} {%endfor%}
  {%endif%} 
  . Bookmark the <a rel="bookmark" title="Permalink to {{entry.title}}" href="/{{ entry.link }}">permalink</a>.
  <span class="edit-link">{%if self.is_admin%}<a href="{{entry.edit_url}}">Edit</a>  {%endif%}</span>		

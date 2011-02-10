@@ -24,13 +24,13 @@
 {{entry.content_excerpt}}
 </div><!-- .entry-content -->
 <div class="entry-utility">
-	<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span>{%for cate in entry.categories%}<a href="/category/{{cate.slug}}">{{cate.name}}</a>, {%endfor%} </span>
+	<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links">Posted in </span>{%for cate in entry.categories%}<a href="/category/{{cate.slug}}">{{cate.name}}</a>{% if forloop.last %}{% else %},{% endif %} {%endfor%} </span>
 	<span class="meta-sep">|</span>
-	<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">{% if entry.strtags %}Tags: </span>{%for tag in entry.tags%}<a href="/tag/{{tag|urlencode}}">{{tag}}</a>, {%endfor%}{%endif%}</span>
+	<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">{% if entry.strtags %}Tagged </span>{%for tag in entry.tags%}<a href="/tag/{{tag|urlencode}}">{{tag}}</a>{% if forloop.last %}{% else %},{% endif %} {%endfor%}{%endif%}</span>
 	<span class="meta-sep">|</span>
-	<span class="comments-link"><a href="/{{entry.link}}#comments">Comments({{entry.commentcount}})&#187;</a></span>
+	<span class="comments-link"><a href="/{{entry.link}}#comments">Leave a comment</a></span>
 	<span class="meta-sep">|</span> 
-	<span class="edit-link">{%if self.is_admin%}<a href="{{entry.edit_url}}">Edit</a> | {%endif%}</span>			
+	<span class="edit-link">{%if self.is_admin%}<a href="{{entry.edit_url}}">Edit</a>{%endif%}</span>			
 </div><!-- .entry-utility -->
 </div><!-- #post-## -->
 {% endfor %}

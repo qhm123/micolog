@@ -269,6 +269,11 @@ pre {
 	line-height: 18px;
 	margin-bottom: 18px;
 	padding: 1.5em;
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 abbr,
 acronym {
@@ -1186,11 +1191,9 @@ h3#reply-title {
 	position: relative;
 }
 #site-generator a {
-	background: url(images/gnome.png) center left no-repeat;
 	color: #666;
 	display: inline-block;
 	line-height: 16px;
-	padding-left: 20px;
 	text-decoration: none;
 }
 #site-generator a:hover {

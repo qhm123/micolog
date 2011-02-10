@@ -12,6 +12,7 @@
         $('#email').val(data[1]);
         $('#url').val(data[2]);
     };
+
     $('#check').load('/checkcode/');
     
     $('#commentform').ajaxForm({
