@@ -1,0 +1,87 @@
+﻿<div id="sidebar">
+<!--    <div class="widget_recent_entries">
+        <h3><span>公告</span></h3>
+        <ul>{{blog.blognotice}}</ul>
+    </div>-->
+    <div class="widget_tag_cloud">
+        <h3><span>热门标签</span></h3>
+        <div>
+        {% mf tagfilter %}
+        {% endmf %}
+        </div>
+    </div>
+    <div class="widget_categories">
+        <h3><span>分类</span></h3>
+        <ul>
+        {%for cate in categories%}
+            <li><a href="/category/{{cate.slug}}">{{cate.name}}[{{cate.count}}]</a></li>
+        {%endfor%}	
+        </ul>
+    </div>
+    <div class="widget_recent_entries">
+        <h3><span>热门文章</span></h3>
+        <ul>
+        {% for entry in blog.hotposts %}
+            <li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}[{{entry.readtimes}}]">{{entry.title|escape}}[{{entry.readtimes}}]</a></li>
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="widget_recent_entries">
+        <h3><span>冷门文章</span></h3>
+        <ul>
+        {% for entry in blog.coldposts %}
+            <li><a href="/{{entry.link|escape}}" title="{{entry.title|escape}}[{{entry.readtimes}}]">{{entry.title|escape}}[{{entry.readtimes}}]</a></li>
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="widget_recent_entries">
+        <h3><span>最新评论</span></h3>
+        <ul>
+        {% for comment in recent_comments %}
+            <li><a href="/{{comment.entry.link}}#comment-{{comment.key.id}}">{{comment.author}}:</a> {{comment.shortcontent}}...</li>
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="widget_archive">
+        <h3><span>归档</span></h3>
+        <ul>
+        {%for archive in archives%}
+            <li><a href="/{{archive.year}}/{{archive.month}}">{{archive.year}}年{{archive.month}}月[{{archive.entrycount}}]</a></li>
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="widget_links">
+        <h3><span>我喜欢的</span></h3>
+        <ul>
+        {%for link in blogroll%}
+        	{% ifequal link.linktype 'mylike' %}
+            <li><a href="{{link.href}}">{{link.linktext}}</a></li>
+            {% endifequal %}
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="widget_links">
+        <h3><span>我制作的</span></h3>
+        <ul>
+        {%for link in blogroll%}
+        	{% ifequal link.linktype 'mywork' %}
+            <li><a href="{{link.href}}">{{link.linktext}}</a></li>
+            {% endifequal %}
+        {%endfor%}
+        </ul>
+    </div>
+    <div class="widget_links">
+        <h3><span>Micolog家族</span></h3>
+        <ul>
+        {%for link in blogroll%}
+        	{% ifequal link.linktype 'micolog' %}
+            <li><a href="{{link.href}}">{{link.linktext}}</a></li>
+            {% endifequal %}
+        {%endfor%}
+        </ul>
+    </div>
+<!--    <div class="widget_recent_entries">
+        <h3><span>博客信息</span></h3>
+        <ul>{% mf siteinfo %}{% endmf %}</ul>
+    </div>-->
+</div>

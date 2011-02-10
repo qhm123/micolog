@@ -1,0 +1,46 @@
+﻿{% extends "base.html" %}
+
+{% block head_block %}
+<link rel="canonical" href="{{ blog.baseurl }}" />
+{% endblock %}
+
+{% block content %}
+<div class="sleeve_main">
+	{% if self.is_admin %}
+		{% include "post-form.html" %}
+	{% endif %}
+	<div id="main">
+		<h2>
+			Recent Updates
+			<a class="rss" href="{{ blog.feedurl }}">RSS</a>
+
+			<span class="controls">
+				<a href="#" id="togglecomments">Toggle Comment Threads</a> | <a href="#directions" id="directions-keyboard">Keyboard Shortcuts</a>
+			</span>
+		</h2>
+	
+		<ul id="postlist">
+		{% if entries %}
+
+			{% for entry in entries %}
+	    		{% include "entry.html" %}
+			{% endfor %}
+
+		{% else %}
+			
+			<li class="no-posts">
+		    	<h3>No posts yet!</h3>
+			</li>
+			
+		{% endif %}
+		</ul>
+		
+		<div class="navigation">
+			<p class="nav-older"><?php next_posts_link( __( '&larr; Older posts', 'p2' ) ); ?></p>
+			<p class="nav-newer"><?php previous_posts_link( __( 'Newer posts &rarr;</span>', 'p2' ) ); ?></p>
+		</div>
+	
+	</div> <!-- main -->
+
+</div> <!-- sleeve -->
+{% endblock %}

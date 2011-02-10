@@ -1,0 +1,63 @@
+﻿<div class="comment_border">
+<h5><span class="comment-hint">评论列表</span></h5>
+<ol id="commentlist" class="commentlist clearfix">
+	{% for comment in comments %}
+		<li class="clearfix" id="comment-{{comment.key.id}}">
+		<div id="div-comment-{{comment.key.id}}" class="c">
+		<div class="commentmeta" title="回复{{comment.author}}" onclick="return backcomment('{{comment.author}}',{{comment.key.id}});" style="cursor: pointer;"><img height="35" width="35" src="{{comment.gravatar_url}}" alt=""/></div>
+		<div class="comments">
+			<div class="commentmetadata">{{comment.no}}&nbsp;-&nbsp;{{comment.date.date|datetz:"Y-m-d"}} at {{comment.date|datetz:"H:i"}}</div>
+			<div class="fn">{%if comment.weburl %}<a href="{{comment.weburl}}" target="_blank">{{comment.author}}</a>{% else %}{{comment.author}}{%endif%}</div>
+			<div class="commentcontent">{{comment.content}}</div>
+		</div>
+		</div>
+		</li>
+	{%endfor%}
+</ol>
+<div id="commentsnavi">
+{{comments_nav.nav}}
+</div>
+</div>
+
+{% if entry.allow_comment %}
+<input type="hidden" value="1" id="check_type">
+<div id="respond">
+<form action="/post_comment" method="post" id="commentform">
+<div id="author_info">
+	<input type="text" name="author" id="author" value="{{user_name}}" tabindex="1"/>
+	<label for="author"><small>昵称<span style="color:red">*</span></small></label>
+	<input type="text" name="email" id="email" value="{{user_email}}" tabindex="2"/>
+	<label for="email"><small>邮箱<span style="color:red">*</span></small></label>
+	<input type="text" name="url" id="url" value="{{user_url}}" tabindex="3" />
+	<label for="url"><small>网站</small></label>
+</div>
+
+<textarea name="comment" id="comment" tabindex="4" cols="60" rows="10" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+
+{% ifequal blog.comment_check_type 1 %}
+<div id="checkarea">
+验证码：<span id="check"></span>
+<input type="text" name="checkret" id="checkret" value="" size="5" tabindex="4" />
+</div>
+{% endifequal %}
+
+{% ifequal blog.comment_check_type 2 %}
+<div id="checkarea" style="padding-bottom:15px">
+<div style="float:left;margin-right:8px;">
+<label for="checkret"><small>Checkcode:</small></label>
+<input type="text" name="checkret" id="checkret" value="" size="5" tabindex="5" />
+</div>
+<img id='checkimg' src='/checkimg/' style="border:0px;padding:0px;" title='Click to change image' onclick="reloadCheckImage();"/>
+</div>
+{% endifequal %}
+
+<input name="submit" type="submit" id="submit" tabindex="5" value="&nbsp;提&nbsp;交&nbsp;" />
+<input name="reply_notify_mail" id="reply_notify_mail" tabindex="6" type="checkbox" checked="checked" />
+<label for="reply_notify_mail">当有回复时，邮件通知我。</label>
+<input type="hidden" name="key" value="{{entry.key}}" />
+<input type="hidden" name="useajax" value="1" />
+</form>
+</div>
+{% else %}
+<!--<p class="nocomments">评论关闭。</p>-->
+{% endif %}

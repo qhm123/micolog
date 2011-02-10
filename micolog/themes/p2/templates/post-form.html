@@ -1,0 +1,64 @@
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		jQuery('#post_cat').val($('#post-types a.selected').attr('id'));
+		$('#post-types a').click(function(e) {
+			jQuery('.post-input').hide();
+			$('#post-types a').removeClass('selected');
+			jQuery(this).addClass('selected');
+			if ($(this).attr('id') == 'post') {
+				jQuery('#posttitle').val("<?php echo esc_js( __('Post Title', 'p2') ); ?>");
+			} else {
+				jQuery('#posttitle').val('');
+			}
+			jQuery('#postbox-type-' + $(this).attr('id')).show();
+			jQuery('#post_cat').val($(this).attr('id'));
+			return false;
+		});
+	});
+</script>
+
+<div id="postbox">
+		<ul id="post-types">
+			<li><a id="status" href="#" title="Status Update">Status Update</a></li>
+			<li><a id="post" href="#" title="Blog Post">Blog Post</a></li>
+			<li><a id="quote" href="#" title="Quote">Quote</a></li>
+			<li><a id="link" href="#" title="Link">Link</a></li>
+		</ul>
+
+		<div class="avatar">
+			<img alt="avatar" src="http://1.gravatar.com/avatar/702af763a482f86ffd0484d07c3d959e?s=48&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&amp;r=G" class="avatar avatar-48 photo" height="48" width="48">
+		</div>
+
+		<div class="inputarea">
+
+			<form id="new_post" name="new_post" method="post" action="http://localhost/">
+				<label for="posttext">Hi, qhmadmin. Whatcha up to?</label>
+				
+				<div id="postbox-type-post" class="post-input " style="display: block; ">
+					<input type="text" name="posttitle" id="posttitle" tabindex="1" value="" onfocus="this.value=(this.value=='Post Title') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Post Title' : this.value;" class="">
+				</div>
+				<div id="media-buttons" class="hide-if-no-js">
+					Upload/Insert <a href="http://localhost/wp-admin/media-upload.php?p2-upload=true&amp;post_id=0&amp;type=image&amp;TB_iframe=1&amp;width=640&amp;height=216" id="add_image" class="thickbox" title="Add an Image"><img src="http://localhost/wp-admin/images/media-button-image.gif?ver=20100531" alt="Add an Image"></a><a href="http://localhost/wp-admin/media-upload.php?p2-upload=true&amp;post_id=0&amp;type=video&amp;TB_iframe=1&amp;width=640&amp;height=216" id="add_video" class="thickbox" title="Add Video"><img src="http://localhost/wp-admin/images/media-button-video.gif?ver=20100531" alt="Add Video"></a><a href="http://localhost/wp-admin/media-upload.php?p2-upload=true&amp;post_id=0&amp;type=audio&amp;TB_iframe=1&amp;width=640&amp;height=216" id="add_audio" class="thickbox" title="Add Audio"><img src="http://localhost/wp-admin/images/media-button-music.gif?ver=20100531" alt="Add Audio"></a><a href="http://localhost/wp-admin/media-upload.php?p2-upload=true&amp;post_id=0&amp;TB_iframe=1&amp;width=640&amp;height=216" id="add_media" class="thickbox" title="Add Media"><img src="http://localhost/wp-admin/images/media-button-other.gif?ver=20100531" alt="Add Media"></a>				</div>
+				<textarea class="expand70-200" name="posttext" id="posttext" tabindex="1" rows="4" cols="60" style="overflow-x: hidden; overflow-y: hidden; height: 4em; "></textarea>
+				<div id="postbox-type-quote" class="post-input " style="display: none; ">
+					<label for="postcitation" class="invisible">Citation</label>
+						<input id="postcitation" name="postcitation" type="text" tabindex="2" value="Citation" onfocus="this.value=(this.value=='Citation') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Citation' : this.value;" class="">
+				</div>
+				<label class="post-error" for="posttext" id="posttext_error" style="display: none; "></label>
+				<div class="postrow">
+					<input id="tags" name="tags" type="text" tabindex="2" autocomplete="off" value="Tag it" onfocus="this.value=(this.value=='Tag it') ? '' : this.value;" onblur="this.value=(this.value=='') ? 'Tag it' : this.value;" class="">
+					<input id="submit" type="submit" tabindex="3" value="Post it" class="">
+				</div>
+				<input type="hidden" name="post_cat" id="post_cat" value="post">
+				<span class="progress" id="ajaxActivity" style="display: none; ">
+					<img src="http://localhost/wp-content/themes/p2/i/indicator.gif" alt="Loading..." title="Loading...">
+				</span>
+				<input type="hidden" name="action" value="post">
+				<input type="hidden" id="_wpnonce" name="_wpnonce" value="7334089170"><input type="hidden" name="_wp_http_referer" value="/">
+			</form>
+
+		</div>
+
+		<div class="clear"></div>
+
+</div> <!-- // postbox -->

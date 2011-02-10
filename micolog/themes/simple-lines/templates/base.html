@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+{%mf head%}
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="Keywords" content="鸣,编程,人生,技术,杂谈,影音书,微博,Python,AppEngine,GAE,比赛,折腾,crazy,Code,Coder,Linux,开源,编程爱好者,豆瓣,读书,电影,互联网,django" />
+<meta name="Description" content="欢迎来到鸣的博客，我在这里记录生活和分享技术。热爱互联网技术，喜爱读书，看电影。" />
+<meta name="google-site-verification" content="vteEqiKZiwbjSN9TwkKliy8TfKK47D2HK-FcvkRIVyM" />
+<meta name="y_key" content="86b1d861d28eb7a6" />
+<meta name="msvalidate.01" content="12280D2FDC0E12FA95A1B3151E34ED0A" />
+<meta name="wumiiVerification" content="0ce00451-7c55-4c95-9d09-ac340c7c8158" />
+<title>{% block title %}{{ blog.title}}{% endblock %}</title>
+<link rel="stylesheet" type="text/css" href="/themes/{{ blog.theme_name }}/style.css" />
+<link rel="alternate" type="application/atom+xml" title="{{ blog.title }}" href="{{ blog.feedurl }}" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/static/wlwmanifest.xml" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="pingback" href="/pingback" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+{% block head_block %}{% endblock %}
+{%endmf%}
+</head>
+<body>
+<div id="container">
+<div id="header-title">
+<div id="logo"><a href="{{ blog.baseurl }}">{{ blog.title}}</a></div>
+<div id="description">{{ blog.subtitle}}</div>
+
+<!--<form action="/search" id="searchform">
+<div>
+    <input type="submit" id="searchsubmit" value="站内搜索" />
+     <input type="text" name="q" id="q" /> 
+</div>
+</form>-->
+
+<a id="searchform" href="/search">站内搜索</a>
+
+</div><!-- end header-title -->
+<div id="content" class="clearfix">
+{%block content %}{%endblock%}
+</div><!-- end content -->
+<div id="foot">
+{%mf footer%}
+<a target="_blank" href="{{ blog.baseurl }}/wap">手机版</a>
+<a target="_blank" href="{{ blog.feedurl }}">订阅本站</a>
+<a target="_blank" href="http://www.douban.com/people/qhm123/">书影音@豆瓣</a>
+<a target="_blank" href="http://www.google.com/profiles/qhm123#">关于我@Google Profile</a>
+<a href="#">返回顶部</a>
+<a class="footr" target="_blank" href="http://micolog.appspot.com/themes/view?key=agdtaWNvbG9nchcLEgVUaGVtZSIMc2ltcGxlLWxpbmVzDA">Simple-Lines</a>
+<a class="footr" target="_blank" href="http://micolog.appspot.com/">Micolog</a>
+<a class="footr" target="_blank" href="/sitemap.xml">网站地图</a>
+<a class="footr" target="_blank" href="/sitemap_baidu.xml">网站地图</a>
+{%endmf%}
+</div><!-- end footer -->
+</div><!-- end container -->
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %} {{tag}} - {{blog.title}} {% endblock %}
+
+{% block content %}
+
+<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+			<h1 class="page-title">Tag Archives: <span>{{tag}}</span></h1>
+			
+			<div class="navigation" id="nav-above">
+			
+				{% if show_prev %}
+					<div class="nav-previous"><a href="/page/{{ pageindex|add:"1" }}"><span class="meta-nav">←</span>Newer posts</a></div>
+							{% endif %}
+						{% if show_next %}
+					<div class="nav-next"><a href="/page/{{ pageindex|add:"-1" }}"> Older posts <span class="meta-nav">→</span></a></div>
+					{% endif %}		
+	</div>
+	{% if entries %}
+
+{% for entry in entries %}
+			<div id="post-{{entry.key}}" class="post-{{entry.key}} post type-post hentry category-uncategorized">
+
+			<h2 class="entry-title"><a href="/{{ entry.link }}" rel="bookmark" title="Permanent Link to {{entry.title}}">{{entry.title}}</a></h2>
+
+			<div class="entry-meta">
+				<span class="meta-prep meta-prep-author">Posted on</span> <a href="/{{ entry.link }}" title="{{entry.date|datetz:"Y F jS"}}" rel="bookmark"><span class="entry-date">{{entry.date|datetz:"F jS, Y"}}</span></a> <span class="meta-sep">by</span> <span class="author vcard">
+				{{entry.author}}    </span>			</div><!-- .entry-meta -->
+
+				<div class="entry-content">
+				{{entry.content_excerpt}}
+							</div><!-- .entry-content -->
+	
+			<div class="entry-utility">
+									<span class="cat-links">
+						<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> 
+						 {%for cate in entry.categories%} <a href="/category/{{cate.slug}}">{{cate.name}}</a> {%endfor%} </span>
+					<span class="meta-sep">|</span>
+					<span class="tag-links">
+						<span class="entry-utility-prep entry-utility-prep-tag-links">{% if entry.strtags %}Tags: </span> 
+						{%for tag in entry.tags%}<a href="/tag/{{tag|urlencode}}">{{tag}}</a> {%endfor%} {%endif%}		
+									</span>
+					<span class="meta-sep">|</span>
+												<span class="comments-link">
+												<a href="/{{entry.link}}#comments">Comments({{entry.commentcount}})&#187;</a>
+												</span>
+				<span class="meta-sep">|</span> <span class="edit-link">
+				{%if self.is_admin%}<a href="{{entry.edit_url}}">Edit</a> | {%endif%} 
+				</span>			</div><!-- .entry-utility -->
+		</div><!-- #post-## -->
+
+		{% endfor %}
+	
+
+                <div class="navigation" id="nav-below">
+				{% if show_prev %}
+					<div class="nav-previous"><a href="/page/{{ pageindex|add:"1" }}"><span class="meta-nav">←</span>Newer posts</a></div>
+							{% endif %}
+						{% if show_next %}
+					<div class="nav-next"><a href="/page/{{ pageindex|add:"-1" }}">Older posts <span class="meta-nav">→</span></a></div>
+					{% endif %}
+				</div>
+
+{% endif %}
+
+			</div><!-- #content -->
+
+		</div><!-- #container -->
+		
+		<!-- #primary .widget-area //sidebar start-->
+{% include "sidebar.html" %}
+		<!-- #primary .widget-area //sidebar end-->
+
+	</div>
+	{% endblock %}
