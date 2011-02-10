@@ -37,6 +37,7 @@
     {%endfor%}
 </ul>{%endif%}
 <p>本文网址:<a href="{{blog.baseurl}}/{{entry.link|escape}}">{{blog.baseurl}}/{{entry.link|escape}}</a></p>
+<img src="{{ blog.baseurl }}/feedhit/{{ entry.key }}" />
 ]]></content:encoded>
 			<wfw:commentRss>{{ blog.feedurl }}/comments</wfw:commentRss>
 			<slash:comments>{{entry.commentcount}}</slash:comments>

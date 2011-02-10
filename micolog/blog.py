@@ -408,6 +408,17 @@ class FeedHandler(BaseRequestHandler):
 		self.response.headers['Content-Type'] = 'application/rss+xml; charset=utf8'
 		self.render2('views/rss.xml',{'entries':entries,'last_updated':last_updated})
 
+class FeedHitHandler(BaseRequestHandler):
+	def get(self, entrykey=''):
+		logging.info('feed hit handler begin.')
+		if entrykey and entrykey != '':
+			entry = Entry.get(entrykey)
+			entry.feedhits += 1
+			entry.put()
+			logging.info('feed hit %s.' % entry.title)
+		logging.info('feed hit handler end.')
+		self.redirect('http://%s/static/images/1x1.gif' % g_blog.domain)
+
 class CommentsFeedHandler(BaseRequestHandler):
 	@cache(time=600)
 	def get(self,tags=None):
@@ -505,7 +516,7 @@ class Post_comment(BaseRequestHandler):
 		key=self.param('key')
 		content=self.param('comment')
 		parent_id=self.paramint('parentid',0)
-		reply_notify_mail=self.parambool('reply_notify_mail')
+		reply_notify_mail=True
 
 		sess=Session(self,timeout=180)
 		if not self.is_login:
@@ -739,6 +750,7 @@ def main():
 			('/checkcode/', CheckCode),
 			('/skin',ChangeTheme),
 			('/feed', FeedHandler),
+			('/feedhit/([0-9a-zA-Z\-\_]+)', FeedHitHandler),
 			('/feed/comments',CommentsFeedHandler),
 			('/sitemap.xml', SitemapHandler),
 			('/sitemap_baidu.xml', SitemapBaiduHandler),

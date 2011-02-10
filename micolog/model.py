@@ -397,6 +397,7 @@ class Entry(BaseModel):
 	published = db.BooleanProperty(default=False)
 	content = db.TextProperty(default='')
 	readtimes = db.IntegerProperty(default=0)
+	feedhits = db.IntegerProperty(default=0)
 	title = db.StringProperty(multiline=False,default='')
 	date = db.DateTimeProperty(auto_now_add=True)
 	mod_date = db.DateTimeProperty(auto_now_add=True)
